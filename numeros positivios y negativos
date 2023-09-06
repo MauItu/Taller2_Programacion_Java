@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        //Declaro las variables para el codigo
+        int num;
+        int positivos = 0;
+        int negativos = 0;
+
+        System.out.println("Ingrese varios valores enteros (ingrese 0 para terminar):");
+        //creo un ciclo donde la computadora va a leer si el numero ingresado es un numero 
+        // positivo o negativo o si es cero para acabar el pograma
+        do {
+            num = sc.nextInt();
+
+            if (num > 0) {
+                positivos++;
+            } else if (num < 0) {
+                negativos++;
+            }
+
+        } while (num != 0);
+        //creo un for para generar en la consola la cantidad de numeros negativo o positivos que
+        //ingreso el usuario, representandiolos con astericos
+        System.out.print("positivos: ");
+        for (int i = 0; i < positivos; i++) {
+            System.out.print("*");
+        }
+
+        System.out.println();
+
+        System.out.print("negativos: ");
+        for (int i = 0; i < negativos; i++) {
+            System.out.print("*");
+        }
+    }
+
+
+}
+
