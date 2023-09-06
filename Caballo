@@ -20,7 +20,7 @@ public class Main {
                 {2, -1}, {2, 1}
         };
 
-
+        // vreirficar que los valores ingresados son validios
         if (filaInicial < 9 && columnaInicial < 9 && filaInicial > 0 && columnaInicial > 0)
         {
             // Mostrar las posiciones a las que puede moverse el caballo
