@@ -10,7 +10,7 @@ public class Main {
         System.out.print("Ingrese la columna inicial (1-8): ");
         int columnaInicial = sc.nextInt();
 
-        System.out.println("Posiciones a las que puede moverse el caballo:");
+
 
         // Definir los movimientos posibles del caballo
         int[][] movimientosCaballo = {
@@ -20,16 +20,23 @@ public class Main {
                 {2, -1}, {2, 1}
         };
 
-        // Mostrar las posiciones a las que puede moverse el caballo
-        for (int i = 0; i < movimientosCaballo.length; i++) {
-            int nuevaFila = filaInicial + movimientosCaballo[i][0];
-            int nuevaColumna = columnaInicial + movimientosCaballo[i][1];
 
-            // Verificar si la nueva posición está dentro del tablero
-            if (nuevaFila >= 1 && nuevaFila <= 8 && nuevaColumna >= 1 && nuevaColumna <= 8) {
-                System.out.println("(" + nuevaFila + ", " + nuevaColumna + ")");
+        if (filaInicial < 9 && columnaInicial < 9 && filaInicial > 0 && columnaInicial > 0)
+        {
+            // Mostrar las posiciones a las que puede moverse el caballo
+            for (int i = 0; i < movimientosCaballo.length; i++) {
+                int nuevaFila = filaInicial + movimientosCaballo[i][0];
+                int nuevaColumna = columnaInicial + movimientosCaballo[i][1];
+
+                // Verificar si la nueva posición está dentro del tablero
+                if (nuevaFila >= 1 && nuevaFila <= 8 && nuevaColumna >= 1 && nuevaColumna <= 8) {
+                    System.out.println("(" + nuevaFila + ", " + nuevaColumna + ")");
+                }
             }
+            System.out.println("Posiciones a las que puede moverse el caballo:");
         }
+        System.out.println("Las posicion ingresada no es valida");
+
 
 
     }
