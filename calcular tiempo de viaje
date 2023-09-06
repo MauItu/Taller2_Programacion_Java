@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        //Declaro cada una de la variables
+        int hora = 0;
+        int min = 0;
+        int tramo = 0;
+        int suma = 0;
+        int canTramos = 1;
+
+        System.out.println("Ingrese cuanto dura cada tramo, e ingrese cero para terminar de dar los tramos");
+        
+        //un while que se reperita infinitas veces hasta que el usuario ingrese cero y se active el break
+        while (1 > 0)
+        {
+            System.out.println("Ingrese cuanto duro en minutos, el tramo numero "+ canTramos);
+            tramo = sc.nextInt();
+            //Suma acumulada de la duracion de cada tramo
+            suma = suma + tramo;
+            //condicion para sabert si el usuario ingreso el valor cero
+            if (tramo == 0)
+            {
+                hora = suma / 60;
+                min = suma % 60;
+                //condiciones para saber si escribir xx:xx o 0x:xx o xx:0x o 0x:0x
+                if (hora >= 10 && min >= 10)
+                {
+                    System.out.println("El recorrido durara "+hora+":"+min);
+                }
+
+                else if (hora < 10 && min >= 10)
+                {
+                    System.out.println("El recorrido durara 0"+hora+":"+min);
+                }
+                else if (hora >= 10 && min < 10)
+                {
+                    System.out.println("El recorrido durara "+hora+":0"+min);
+                }
+
+                else{
+                    System.out.println("El recorrido durara 0"+hora+":0"+min);
+                }
+                //break para acabar cobn el programa
+                break;
+            }
+        }
+
+
+
+
+    }
+}
+
