@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese la cantidad de datos a ingresar: ");
+        int cantidadDatos = sc.nextInt();
+
+        if (cantidadDatos <= 0) {
+            System.out.println("La cantidad de datos debe ser un número positivo.");
+            return;
+        }
+
+        double[] datos = new double[cantidadDatos];
+        double maximo = Double.MIN_VALUE;
+        double minimo = Double.MAX_VALUE;
+
+        // Leer los datos uno por uno y encontrar el máximo y el mínimo
+        for (int i = 0; i < cantidadDatos; i++) {
+            System.out.print("Ingrese el dato " + (i + 1) + ": ");
+            double dato = sc.nextDouble();
+            datos[i] = dato;
+
+            if (dato > maximo) {
+                maximo = dato;
+            }
+
+            if (dato < minimo) {
+                minimo = dato;
+            }
+        }
+
+        // Calcular y mostrar el rango de los datos
+        double rango = maximo - minimo;
+        System.out.println("El rango de los datos es: " + rango);
+
+    }
+}
+
